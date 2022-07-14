@@ -11,8 +11,10 @@ export default function HomeScreen({ navigation }) {
   const [withs, setWiths] = useState([]);
 
   useEffect(() => {
-    getWiths();
-  }, []);
+    navigation.addListener('focus', () => {
+      getWiths();
+    });
+  }, [navigation]);
 
   const getWiths = async () => {
     const accessToken = await AsyncStorage.getItem("access-token");

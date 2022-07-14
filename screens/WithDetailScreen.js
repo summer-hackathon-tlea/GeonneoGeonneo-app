@@ -7,7 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import Location from "../assets/location.png";
 import Member from "../assets/member.png";
 
-export default function WithDetail({ navigation, route }) {
+export default function WithDetailScreen({ navigation, route }) {
 
   const withId = route.params.withId;
   const [withDetail, setWithDetail] = useState({});

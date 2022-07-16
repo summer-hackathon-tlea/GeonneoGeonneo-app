@@ -12,10 +12,6 @@ export default function WithDetailScreen({ navigation, route }) {
   const withId = route.params.withId;
   const [withDetail, setWithDetail] = useState({});
 
-  useEffect(() => {
-    getWithDetail();
-  }, []);
-
   const getWithDetail = async () => {
     const accessToken = await AsyncStorage.getItem("access-token");
     try {
@@ -30,6 +26,8 @@ export default function WithDetailScreen({ navigation, route }) {
       console.log(e);
     }
   };
+
+  useEffect(getWithDetail, []);
 
   return (
     <View style={styles.root}>

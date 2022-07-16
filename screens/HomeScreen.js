@@ -11,9 +11,7 @@ export default function HomeScreen({ navigation }) {
   const [withs, setWiths] = useState([]);
 
   useEffect(() => {
-    navigation.addListener('focus', () => {
-      getWiths();
-    });
+    navigation.addListener('focus', getWiths);
   }, [navigation]);
 
   const getWiths = async () => {
